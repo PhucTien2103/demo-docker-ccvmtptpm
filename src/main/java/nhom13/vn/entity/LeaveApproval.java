@@ -23,7 +23,7 @@ public class LeaveApproval implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date approvalTime;
 
-    @Column(columnDefinition = "nvarchar(500)")
+    @Column(length = 500)
     private String note;
 
     public LeaveApproval() {

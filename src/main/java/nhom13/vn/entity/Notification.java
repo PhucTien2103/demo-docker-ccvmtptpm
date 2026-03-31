@@ -12,7 +12,7 @@ public class Notification implements Serializable {
     @JoinColumn(name = "receiverId")
     private User receiver;
 
-    @Column(columnDefinition = "nvarchar(MAX)")
+    @Column(columnDefinition = "text")
     private String content;
 
     private boolean isRead;

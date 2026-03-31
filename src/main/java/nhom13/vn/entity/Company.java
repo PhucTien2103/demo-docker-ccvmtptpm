@@ -13,10 +13,10 @@ public class Company implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(columnDefinition = "nvarchar(255) not null")
+    @Column(nullable = false, length = 255)
     private String name;
 
-    @Column(columnDefinition = "nvarchar(500)")
+    @Column(length = 500)
     private String address;
 
     private String contactInfo;

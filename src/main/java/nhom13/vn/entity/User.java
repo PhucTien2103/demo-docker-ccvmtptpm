@@ -19,7 +19,7 @@ public class User implements Serializable {
 
     private String email;
 
-    @Column(columnDefinition = "nvarchar(200)")
+    @Column(length = 200)
     private String fullName;
 
     private String role; // Super Admin, Manager, Employee

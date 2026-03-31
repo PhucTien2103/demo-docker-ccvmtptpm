@@ -22,7 +22,7 @@ public class LeaveRequest implements Serializable {
     @Temporal(TemporalType.DATE)
     private java.util.Date endDate;
 
-    @Column(columnDefinition = "nvarchar(MAX)")
+    @Column(columnDefinition = "text")
     private String reason;
 
     private String status; // Chờ duyệt, Đã duyệt, Từ chối

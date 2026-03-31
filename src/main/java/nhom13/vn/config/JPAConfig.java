@@ -16,17 +16,17 @@ public class JPAConfig {
 
         if (dbUrl == null || dbUrl.isBlank()) {
             String host = envOrDefault("DB_HOST", "localhost");
-            String port = envOrDefault("DB_PORT", "1433");
+            String port = envOrDefault("DB_PORT", "5432");
             String dbName = envOrDefault("DB_NAME", "XinNghiPhep");
             dbUrl = String.format(
-                    "jdbc:sqlserver://%s:%s;databaseName=%s;encrypt=true;trustServerCertificate=true",
+                    "jdbc:postgresql://%s:%s/%s?sslmode=require",
                     host, port, dbName
             );
         }
 
         overrides.put("jakarta.persistence.jdbc.url", dbUrl);
-        overrides.put("jakarta.persistence.jdbc.user", envOrDefault("DB_USER", "sa"));
-        overrides.put("jakarta.persistence.jdbc.password", envOrDefault("DB_PASSWORD", "123456"));
+        overrides.put("jakarta.persistence.jdbc.user", envOrDefault("DB_USER", "postgres"));
+        overrides.put("jakarta.persistence.jdbc.password", envOrDefault("DB_PASSWORD", "postgres"));
         return Persistence.createEntityManagerFactory("XinNghiPhepPU", overrides);
     }
 

@@ -15,7 +15,7 @@ public class LeaveReport implements Serializable {
     @JoinColumn(name = "createdById")
     private User createdBy;
 
-    @Column(columnDefinition = "nvarchar(255)")
+    @Column(length = 255)
     private String title;
 
     @Temporal(TemporalType.TIMESTAMP)
